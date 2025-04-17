@@ -268,10 +268,10 @@ query result 5 screenshot
 ### ✨ Key Features
 | Feature | Description   |
 |---------|--------------------|
-| **Ranking** | `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()` for ordered data 👑 |
-| **Comparison** | `LAG()` and `LEAD()` for row-to-row analysis  🔄 |
-| **Aggregates** | `SUM()`, `AVG()`, `MAX()`, `MIN()` over windows  ➕ |
-| **Analysis** | `PERCENT_RANK()` and `NTILE()` for percentiles  📊 |
+| **👑 Ranking** | `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()` for ordered data  |
+| **🔄 Comparison** | `LAG()` and `LEAD()` for row-to-row analysis   |
+| **➕ Aggregates** | `SUM()`, `AVG()`, `MAX()`, `MIN()` over windows   |
+| **📊 Analysis** | `PERCENT_RANK()` and `NTILE()` for percentiles   |
 
 ### 💡 Practical Benefits
 - ↔️ Compare values across related records
@@ -282,9 +282,9 @@ query result 5 screenshot
 ### 🏭 Common Use Cases
 | Use Case | Application | 
 |----------|-------------|
-| Compensation | Salary analysis and benchmarking  💰 |
-| Performance | Department metrics and KPIs  📈 |
-| HR Analytics | Employee ranking and evaluation  👥 |
-| Business Intel | Trend analysis over time  📅 |
+| 💰 Compensation | Salary analysis and benchmarking  |
+| 💰 Performance | Department metrics and KPIs   |
+| 👥 HR Analytics | Employee ranking and evaluation  |
+| 📅 Business Intel | Trend analysis over time   |
 
 Window functions provide powerful data analysis capabilities while maintaining query efficiency. These examples can be adapted for various business intelligence and reporting needs. 🚀
