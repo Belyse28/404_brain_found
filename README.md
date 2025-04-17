@@ -2,7 +2,7 @@
 ##Exploring SQL Window Functions
 
 ##Explanation: LAG() retrieves the previous employee's salary within each department when ordered by hire date. LEAD() retrieves the next employee's salary. The CASE statement compares these values and labels them as HIGHER, LOWER, or EQUAL.
-''' sql
+''' ''' sql
 SELECT 
     employee_id, 
     name, 
