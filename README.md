@@ -245,7 +245,6 @@ query result 4 screenshot
 
 ### 6. Salary Comparison with LAG and LEAD
 
-This example demonstrates how to compare each employee's salary with the previous and next employee's salary using LAG() and LEAD() functions.
 
 ```sql
 SELECT 
@@ -288,6 +287,38 @@ Clear labels indicating whether the current salary is higher, lower, or equal to
 Special handling for the first and last records in the result set
 
 
-### Conclusion: Oracle SQL Window Functions Demonstration
+### Conclusion
 
-This comprehensive demonstration showcases the power and versatility of Oracle SQL window functions for advanced data analysis. Through practical examples, we've explored how these functions enable sophisticated calculations across related rows without collapsing the result set.
+This project demonstrates essential Oracle SQL window functions for advanced data analysis:
+
+### Key Features Shown:
+
+_Ranking data with ROW_NUMBER(), RANK(), DENSE_RANK()
+
+_Comparing rows using LAG() and LEAD()
+
+_Calculating aggregates with SUM(), AVG(), MAX(), MIN() over windows
+
+_Percentile analysis with PERCENT_RANK() and NTILE()
+
+### Practical Benefits:
+
+_Compare values across related records
+
+_Calculate running totals and moving averages
+
+_Analyze data by categories (departments, time periods)
+
+_Identify top performers and outliers
+
+### Use Cases:
+
+_Salary and compensation analysis
+
+_Department performance metrics
+
+_Employee ranking and benchmarking
+
+_Trend analysis over time
+
+Window functions provide powerful data analysis capabilities while maintaining query efficiency. The examples can be adapted for various business intelligence and reporting needs.
