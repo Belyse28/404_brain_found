@@ -264,32 +264,27 @@ query result 5 screenshot
 
 
 ## 🎯 Conclusion
-### ✨ Key Features Shown:
 
-- 👑 Ranking data with ``ROW_NUMBER()``, ``RANK()``, ``DENSE_RANK()``
+### ✨ Key Features
+| Feature | Description | Emoji |
+|---------|-------------|-------|
+| **Ranking** | `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()` for ordered data | 👑 |
+| **Comparison** | `LAG()` and `LEAD()` for row-to-row analysis | 🔄 |
+| **Aggregates** | `SUM()`, `AVG()`, `MAX()`, `MIN()` over windows | ➕ |
+| **Analysis** | `PERCENT_RANK()` and `NTILE()` for percentiles | 📊 |
 
-- 🔄 Comparing rows using ``LAG()`` and ``LEAD()``
-
-- ➕ Calculating aggregates with ``SUM()``, ``AVG()``, ``MAX()``, ``MIN()``
-
-- 📊 Percentile analysis with ``PERCENT_RANK()`` and ``NTILE()``
-
-## 💡 Practical Benefits:
+### 💡 Practical Benefits
 - ↔️ Compare values across related records
-
 - 🏦 Calculate running totals and moving averages
-
-- 🏢 Analyze data by categories ``(departments, time periods)``
-
+- 🏢 Analyze by categories (departments, time periods)
 - 🏆 Identify top performers and outliers
 
-### 🏭 Use Cases:
-- 💰 Salary and compensation analysis
+### 🏭 Common Use Cases
+| Use Case | Application | Emoji |
+|----------|-------------|-------|
+| Compensation | Salary analysis and benchmarking | 💰 |
+| Performance | Department metrics and KPIs | 📈 |
+| HR Analytics | Employee ranking and evaluation | 👥 |
+| Business Intel | Trend analysis over time | 📅 |
 
-- 📈 Department performance metrics
-
-- 👥 Employee ranking and benchmarking
-
-- 📅 Trend analysis over time
-
-Window functions provide powerful data analysis capabilities while maintaining query efficiency. The examples can be adapted for various business intelligence and reporting needs. 🚀
+Window functions provide powerful data analysis capabilities while maintaining query efficiency. These examples can be adapted for various business intelligence and reporting needs. 🚀
