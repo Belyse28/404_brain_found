@@ -1,5 +1,9 @@
 # 🧠 404_brain_found
 # 🚀 Oracle SQL Window Functions Demonstration
+# 👤 Student Information
+
+**Name:** UMWALI Belyse  27229
+       ** MUVUNYI Holiness  27137
 
 ## 📖 Introduction
 
@@ -62,6 +66,7 @@ COMMIT;
 ```
 
 ### 2. 🔢 ROW_NUMBER() Examples
+
 ##### Example 1a: Assign row numbers to employees overall
 
 ```sql
@@ -90,6 +95,7 @@ FROM
     employees;
 ```
 #### Query result1 screenshot
+
 ![1](https://github.com/user-attachments/assets/ad2f2cf1-ae7d-49f4-9330-6e518123c47d)
 
 #### 3. 🥇 RANK() and DENSE_RANK() Examples
@@ -122,6 +128,7 @@ FROM
 ```
 
 Query result 2 screenshot
+
 ![2](https://github.com/user-attachments/assets/6fc9e1bb-678d-46ce-bac4-2ea27f4e894c)
 
 ### 4. 🔄 LAG() and LEAD() Examples
@@ -169,6 +176,7 @@ FROM
 ```
 
 Query relsult 3 screenshot
+
 ![3](https://github.com/user-attachments/assets/0ef501d0-8621-45b0-85c3-3339222ee588)
 
 ### 5. 🧮 Aggregate Window Functions
@@ -230,6 +238,7 @@ FROM
 ```
 
 query result 4 screenshot
+
 ![4](https://github.com/user-attachments/assets/047d36dc-8b09-4839-968a-cb5042b24121)
 
 ### 6. 📈 Salary Comparison with LAG and LEAD
@@ -263,6 +272,7 @@ ORDER BY
 ```
 
 query result 5 screenshot
+
 ![5](https://github.com/user-attachments/assets/11a44492-cf12-4784-9ed3-6f16f7599c18)
 
 
