@@ -71,7 +71,7 @@ COMMIT;
 ```
 
 ##  🔍 Instruction Implementation
-1. 🔄 Compare Values with Previous/Next Records
+2. 🔄 Compare Values with Previous/Next Records
    
 Requirement: Use LAG()/LEAD() to compare salary values between records
 
@@ -107,15 +107,16 @@ FROM
 
 ![1](https://github.com/user-attachments/assets/e778f393-c03c-4c9d-a492-4bd5fb020e36)
 
-First record shows NULL for previous salary (no preceding record)
+-First record shows NULL for previous salary (no preceding record)
 
-Last record shows NULL for next salary (no following record)
+-Last record shows NULL for next salary (no following record)
 
-Clear comparison labels (HIGHER/LOWER/EQUAL)
+-Clear comparison labels (HIGHER/LOWER/EQUAL)
 
-Demonstrates sequential record analysis
+-Demonstrates sequential record analysis
 
-Key Learning:
+### Key Learning:
+
 Window functions enable row-to-row comparisons without self-joins.
 
 #### 3. 🥇 RANK() and DENSE_RANK() Examples
@@ -167,6 +168,18 @@ SELECT
 FROM 
     employees;
 ```
+
+
+###  Analysis:
+
+_ ``LAG()`` accesses the previous row's salary value
+
+_ Defaults to 0 when no previous record exists (first row)
+
+_ Calculates absolute difference between current and previous salary
+
+_ Useful for tracking salary progression across employees
+
 ### Example 3b: Compare salary with next highest earner in the same department
 
 ```sql
@@ -181,6 +194,15 @@ SELECT
 FROM 
     employees;
 ```
+###  Analysis:
+- LEAD() looks ahead to the next salary in department
+
+- NULL appears for the lowest earner in each department
+
+- Shows the salary gap between current and next employee
+
+-PARTITION BY ensures comparisons stay within departments
+
 #### Example 3c: Calculate year-over-year experience (days between hire dates)
 ```sql
 SELECT 
@@ -196,9 +218,28 @@ FROM
 
 ```
 
-Query relsult 3 screenshot
+  Query relsult 3 screenshot
 
 ![3](https://github.com/user-attachments/assets/1dfdd109-7771-42bc-b2af-93186bd38f2b)
+
+## EX
+Calculates days between consecutive hires in each department
+
+First hire in each department shows NULL (no previous hire)
+
+Reveals hiring patterns and gaps in recruitment
+
+Date arithmetic automatically handles Oracle date subtraction
+
+## Key Technical Notes:
+
+- Window frame: PARTITION BY department creates department-specific sequences
+
+- ORDER BY in OVER() clause determines comparison order
+
+- Default offset of 1 compares immediate neighbors
+
+- NULL handling shows dataset boundaries clearly
 
 
 ### 5. 🧮 Aggregate Window Functions
@@ -216,6 +257,17 @@ SELECT
 FROM 
     employees;
 ```
+
+### Analysis:
+
+- Calculates cumulative sum of salaries
+
+- Ordered by employee_id for sequential accumulation
+
+- Each row shows total salaries up to that point
+
+- Useful for payroll budgeting and cash flow analysis
+  
 ### Example 4b: Calculate department statistics
 ```sql
 SELECT 
@@ -231,6 +283,17 @@ SELECT
 FROM 
     employees;
 ```
+### Analysis:
+
+- Computes multiple aggregates in single pass
+
+- PARTITION BY creates department-specific calculations
+
+- Shows how individual salaries compare to department metrics
+
+- COUNT() provides workforce distribution insights
+
+  
 ### Example 4c: Calculate percentage of total department salary
 ```sql
 SELECT 
@@ -243,6 +306,18 @@ SELECT
 FROM 
     employees;
 ```
+
+## Analysis:
+
+- Calculates relative salary contribution
+
+- Shows employee's share of department payroll
+
+- Helps identify high/low impact positions
+
+- ROUND() ensures clean percentage formatting
+
+
 #### Example 4d: Calculate running averages
 ```sql
 SELECT 
@@ -258,10 +333,43 @@ FROM
     employees;
 
 ```
+### Composite Output Analysis:
 
 query result 4 screenshot
 
 ![4](https://github.com/user-attachments/assets/e806f763-3ddc-4697-b74f-eac5e85d9c10)
+
+### Key Insights from All Aggregate Examples:
+
+#### Multi-level Analysis:
+
+Department-level vs company-wide metrics
+
+Individual vs group comparisons
+
+### Performance Benefits:
+
+Single-pass calculation for multiple aggregates
+
+More efficient than multiple subqueries
+
+### Business Applications:
+
+Payroll budgeting (running totals)
+
+Compensation benchmarking (department averages)
+
+Workforce planning (salary distributions)
+
+### Technical Features:
+
+-PARTITION BY for group-wise calculations
+
+-ORDER BY for sequential processing
+
+-Window frames for moving calculations
+
+-Arithmetic operations within window functions
 
 
 ### 6. 📈 Salary Comparison with LAG and LEAD
@@ -293,12 +401,73 @@ ORDER BY
     employee_id;
 
 ```
+###  Output Analysis:
 
 query result 5 screenshot
 
 ![5](https://github.com/user-attachments/assets/29659686-fc81-41c3-9cd0-7cec9616b4ca)
 
+### Technical Breakdown:
 
+#### 1.LAG() Function:
+
+-Accesses the previous employee's salary
+
+-Returns NULL for first record (marked as 'FIRST RECORD')
+
+-Offset of 1 compares immediate predecessor
+
+#### 2.LEAD() Function:
+
+-Accesses the next employee's salary
+
+-Returns NULL for last record (marked as 'LAST RECORD')
+
+-Provides forward-looking comparison
+
+#### 3.CASE Statements:
+
+-Clear labeling of salary changes (HIGHER/LOWER/EQUAL)
+
+-Special handling for boundary conditions
+
+-Human-readable output format
+
+#### 4.Sorting:
+
+-ORDER BY employee_id ensures sequential comparison
+
+-Maintains consistent record order
+
+#### Business Insights:
+
+-Identifies salary progression patterns
+
+-Flags significant pay jumps/drops between employees
+
+-Helps detect potential pay parity issues
+
+-Useful for compensation benchmarking
+
+### Common Use Cases:
+
+#### 1.HR Analytics:
+
+-Review salary changes across employee numbers
+
+-Identify outlier compensation cases
+
+### 2.Payroll Audits:
+
+-Verify gradual salary increments
+
+-Detect abrupt pay changes
+
+### 3.Workforce Planning:
+
+-Analyze compensation distribution
+
+-Compare pay scales across departments
 
 
 
