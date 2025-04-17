@@ -6,22 +6,25 @@ This repository demonstrates various Oracle SQL window functions through practic
 
 #### The examples cover:
 
--ROW_NUMBER(), RANK(), and DENSE_RANK() for ranking data
+-```ROW_NUMBER()```, ```sql RANK()```, and ```DENSE_RANK()``` for ranking data
 
--LAG() and LEAD() for accessing data from other rows
+-```LAG()``` and ```LEAD()``` for accessing data from other rows
 
--Aggregate window functions (SUM, AVG, MAX, MIN)
+-Aggregate window functions ```(SUM, AVG, MAX, MIN)```
 
 -Percentile functions
 
--FIRST_VALUE and LAST_VALUE
+-```FIRST_VALUE``` and ```LAST_VALUE```
 
 -Practical applications like identifying above-average earners
 
 ## Code Examples
 
 ### 1. Setting up the Employees Table
+
 ```sql
+
+
 -- First, ensure we have the employees table with sample data
 -- If the table already exists, drop it to start fresh
 BEGIN
@@ -30,8 +33,10 @@ EXCEPTION
   WHEN OTHERS THEN NULL;
 END;
 /
+```
+### Create the employees table
 
--- Create the employees table
+``` sql
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
     first_name VARCHAR(50),
@@ -40,8 +45,11 @@ CREATE TABLE employees (
     salary DECIMAL(10,2),
     hire_date DATE
 );
+```
+### Insert sample data
 
--- Insert sample data
+``` sql
+
 INSERT ALL
     INTO Employees (employee_id, first_name, last_name, department, salary, hire_date) VALUES (1, 'John', 'Smith', 'IT', 75000.00, TO_DATE('2018-06-20', 'YYYY-MM-DD'))
     INTO Employees (employee_id, first_name, last_name, department, salary, hire_date) VALUES (2, 'Sarah', 'Jones', 'HR', 85000.00, TO_DATE('2015-03-14', 'YYYY-MM-DD'))
@@ -60,8 +68,12 @@ COMMIT;
 
 ### 2. ROW_NUMBER() Examples
 
+
+
+### Example 1a: Assign row numbers to employees overall
+
 ```sql
--- Example 1a: Assign row numbers to employees overall
+
 SELECT 
     employee_id,
     first_name,
@@ -71,8 +83,10 @@ SELECT
     ROW_NUMBER() OVER(ORDER BY salary DESC) as overall_salary_rank
 FROM 
     employees;
+```
+### Example 1b: Assign row numbers within each department
 
--- Example 1b: Assign row numbers within each department
+```sql
 SELECT 
     employee_id,
     first_name,
@@ -87,9 +101,11 @@ FROM
 
 ### 3. RANK() and DENSE_RANK() Examples
 
-```sql
 
--- Example 2a: Compare RANK() vs DENSE_RANK()
+
+###  Example 2a: Compare RANK() vs DENSE_RANK()
+
+```sql
 SELECT 
     employee_id,
     first_name,
@@ -100,8 +116,9 @@ SELECT
     DENSE_RANK() OVER(ORDER BY salary DESC) as dense_salary_rank
 FROM 
     employees;
-
--- Example 2b: RANK() and DENSE_RANK() within departments
+```
+### Example 2b: RANK() and DENSE_RANK() within departments
+```sql
 SELECT 
     employee_id,
     first_name,
@@ -114,13 +131,15 @@ FROM
     employees;
 ```
 
-Query result 2
+Query result 2 screenshot
 
 ### 4. LAG() and LEAD() Examples
 
-```sql
 
--- Example 3a: Compare current salary with previous employee's salary
+
+### Example 3a: Compare current salary with previous employee's salary
+
+```sql 
 SELECT 
     employee_id,
     first_name,
@@ -131,8 +150,10 @@ SELECT
     salary - LAG(salary, 1, 0) OVER(ORDER BY employee_id) as salary_difference
 FROM 
     employees;
+```
+### Example 3b: Compare salary with next highest earner in the same department
 
--- Example 3b: Compare salary with next highest earner in the same department
+```sql
 SELECT 
     employee_id,
     first_name,
@@ -143,8 +164,9 @@ SELECT
     salary - LEAD(salary, 1, 0) OVER(PARTITION BY department ORDER BY salary DESC) as salary_gap
 FROM 
     employees;
-
--- Example 3c: Calculate year-over-year experience (days between hire dates)
+```
+#### Example 3c: Calculate year-over-year experience (days between hire dates)
+```sql
 SELECT 
     employee_id,
     first_name,
@@ -158,12 +180,14 @@ FROM
 
 ```
 
-Query relsult 3
+Query relsult 3 screenshot
 
 #### 5. Aggregate Window Functions
 
+
+###  Example 4a: Calculate running total of salaries
+
 ```sql
--- Example 4a: Calculate running total of salaries
 SELECT 
     employee_id,
     first_name,
@@ -173,8 +197,9 @@ SELECT
     SUM(salary) OVER(ORDER BY employee_id) as running_total_salary
 FROM 
     employees;
-
--- Example 4b: Calculate department statistics
+```
+### Example 4b: Calculate department statistics
+```sql
 SELECT 
     employee_id,
     first_name,
@@ -187,8 +212,9 @@ SELECT
     COUNT(*) OVER(PARTITION BY department) as dept_employee_count
 FROM 
     employees;
-
--- Example 4c: Calculate percentage of total department salary
+```
+### Example 4c: Calculate percentage of total department salary
+```sql
 SELECT 
     employee_id,
     first_name,
@@ -198,8 +224,9 @@ SELECT
     ROUND(salary / SUM(salary) OVER(PARTITION BY department) * 100, 2) as pct_of_dept_salary
 FROM 
     employees;
-
--- Example 4d: Calculate running averages
+```
+#### Example 4d: Calculate running averages
+```sql
 SELECT 
     employee_id,
     first_name,
@@ -214,7 +241,7 @@ FROM
 
 ```
 
-query result 4
+query result 4 screenshot
 
 ### 6. Salary Comparison with LAG and LEAD
 
@@ -248,7 +275,7 @@ ORDER BY
 
 ```
 
-query result 5
+query result 5 screenshot
 
 ### This query shows:
 
