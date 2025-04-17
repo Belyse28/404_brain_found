@@ -1,8 +1,8 @@
 # 404_brain_found
-Exploring SQL Window Functions
+##Exploring SQL Window Functions
+
 ##Explanation: LAG() retrieves the previous employee's salary within each department when ordered by hire date. LEAD() retrieves the next employee's salary. The CASE statement compares these values and labels them as HIGHER, LOWER, or EQUAL.
--- 1. Compare Values with Previous or Next Records
--- Using LAG() to compare with previous records
+''' sql
 SELECT 
     employee_id, 
     name, 
@@ -33,7 +33,7 @@ SELECT
     END AS comparison_with_next
 FROM employees
 ORDER BY department, hire_date;
-
+''' ''''
 ## Explanation of the difference:
 RANK(): Assigns ranks to rows with gaps for ties. For example, if two employees have the same salary and are ranked 2nd, the next employee would be ranked 4th.
 DENSE_RANK(): Assigns ranks to rows without gaps for ties. For example, if two employees have the same salary and are ranked 2nd, the next employee would be ranked 3rd.
