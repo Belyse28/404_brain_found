@@ -259,49 +259,37 @@ ORDER BY
 
 query result 5 screenshot
 
-### This query shows:
-
-Each employee's salary compared to the previous employee (using LAG)
-
-Each employee's salary compared to the next employee (using LEAD)
-
-Clear labels indicating whether the current salary is higher, lower, or equal to adjacent records
-
-Special handling for the first and last records in the result set
 
 
-### Conclusion
 
-This project demonstrates essential Oracle SQL window functions for advanced data analysis:
 
-### Key Features Shown:
+## 🎯 Conclusion
+### ✨ Key Features Shown:
 
-_Ranking data with ROW_NUMBER(), RANK(), DENSE_RANK()
+- 👑 Ranking data with ``ROW_NUMBER()``, ``RANK()``, ``DENSE_RANK()``
 
-_Comparing rows using LAG() and LEAD()
+- 🔄 Comparing rows using ``LAG()`` and ``LEAD()``
 
-_Calculating aggregates with SUM(), AVG(), MAX(), MIN() over windows
+- ➕ Calculating aggregates with ``SUM()``, ``AVG()``, ``MAX()``, ``MIN()``
 
-_Percentile analysis with PERCENT_RANK() and NTILE()
+- 📊 Percentile analysis with ``PERCENT_RANK()`` and ``NTILE()``
 
-### Practical Benefits:
+## 💡 Practical Benefits:
+- ↔️ Compare values across related records
 
-_Compare values across related records
+- 🏦 Calculate running totals and moving averages
 
-_Calculate running totals and moving averages
+- 🏢 Analyze data by categories ``(departments, time periods)``
 
-_Analyze data by categories (departments, time periods)
+- 🏆 Identify top performers and outliers
 
-_Identify top performers and outliers
+### 🏭 Use Cases:
+- 💰 Salary and compensation analysis
 
-### Use Cases:
+- 📈 Department performance metrics
 
-_Salary and compensation analysis
+- 👥 Employee ranking and benchmarking
 
-_Department performance metrics
+- 📅 Trend analysis over time
 
-_Employee ranking and benchmarking
-
-_Trend analysis over time
-
-Window functions provide powerful data analysis capabilities while maintaining query efficiency. The examples can be adapted for various business intelligence and reporting needs.
+Window functions provide powerful data analysis capabilities while maintaining query efficiency. The examples can be adapted for various business intelligence and reporting needs. 🚀
