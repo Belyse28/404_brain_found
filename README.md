@@ -2,8 +2,12 @@
 # 🚀 Oracle SQL Window Functions Demonstration
 # 👤 Student Information
 
+# 👤 Student Information
+ 
 **Name:** UMWALI Belyse  27229
-       ** MUVUNYI Holiness  27137
+**ID:** 27229
+**Name:** MUVUNYI Holiness  
+**ID:** 27137
 
 ## 📖 Introduction
 
