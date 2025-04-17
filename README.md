@@ -1,30 +1,24 @@
-# 404_brain_found
-# Oracle SQL Window Functions Demonstration
-## Introduction
+# 🧠 404_brain_found
+# 🚀 Oracle SQL Window Functions Demonstration
+
+## 📖 Introduction
 
 This repository demonstrates various Oracle SQL window functions through practical examples. Window functions perform calculations across a set of table rows that are somehow related to the current row, similar to aggregate functions but without grouping rows into a single output row.
 
-#### The examples cover:
+#### 📋 The examples cover:
+- `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()` for ranking data 👑
+- `LAG()` and `LEAD()` for accessing data from other rows 🔄
+- Aggregate window functions (`SUM`, `AVG`, `MAX`, `MIN`) ➕
+- Percentile functions 📊
+- `FIRST_VALUE` and `LAST_VALUE` 🏁
+- Practical applications like identifying above-average earners 💰
 
--```ROW_NUMBER()```, ```sql RANK()```, and ```DENSE_RANK()``` for ranking data
+---
 
--```LAG()``` and ```LEAD()``` for accessing data from other rows
+## 💻 Code Examples
 
--Aggregate window functions ```(SUM, AVG, MAX, MIN)```
-
--Percentile functions
-
--```FIRST_VALUE``` and ```LAST_VALUE```
-
--Practical applications like identifying above-average earners
-
-## Code Examples
-
-### 1. Setting up the Employees Table
-
+### 1. 🏗️ Setting up the Employees Table
 ```sql
-
-
 -- First, ensure we have the employees table with sample data
 -- If the table already exists, drop it to start fresh
 BEGIN
@@ -33,6 +27,7 @@ EXCEPTION
   WHEN OTHERS THEN NULL;
 END;
 /
+
 ```
 ### Create the employees table
 
