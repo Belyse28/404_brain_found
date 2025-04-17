@@ -70,9 +70,10 @@ SELECT * FROM dual;
 COMMIT;
 ```
 
-### 2. 🔢 ROW_NUMBER() Examples
-
-##### Example 1a: Assign row numbers to employees overall
+##  🔍 Instruction Implementation
+1. 🔄 Compare Values with Previous/Next Records
+   
+Requirement: Use LAG()/LEAD() to compare salary values between records
 
 ```sql
 
@@ -99,10 +100,23 @@ SELECT
 FROM 
     employees;
 ```
+
+### Output Analysis:
+
 #### Query result1 screenshot
 
 ![1](https://github.com/user-attachments/assets/e778f393-c03c-4c9d-a492-4bd5fb020e36)
 
+First record shows NULL for previous salary (no preceding record)
+
+Last record shows NULL for next salary (no following record)
+
+Clear comparison labels (HIGHER/LOWER/EQUAL)
+
+Demonstrates sequential record analysis
+
+Key Learning:
+Window functions enable row-to-row comparisons without self-joins.
 
 #### 3. 🥇 RANK() and DENSE_RANK() Examples
 **Example 2a:** Compare RANK() vs DENSE_RANK()
