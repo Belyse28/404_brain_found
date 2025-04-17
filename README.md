@@ -61,11 +61,8 @@ SELECT * FROM dual;
 COMMIT;
 ```
 
-### 2. ROW_NUMBER() Examples
-
-
-
-### Example 1a: Assign row numbers to employees overall
+### 2. 🔢 ROW_NUMBER() Examples
+##### Example 1a: Assign row numbers to employees overall
 
 ```sql
 
@@ -93,12 +90,8 @@ FROM
     employees;
 ```
 #### Query result1 screenshot
-
-### 3. RANK() and DENSE_RANK() Examples
-
-
-
-###  Example 2a: Compare RANK() vs DENSE_RANK()
+#### 3. 🥇 RANK() and DENSE_RANK() Examples
+**Example 2a:** Compare RANK() vs DENSE_RANK()
 
 ```sql
 SELECT 
@@ -128,11 +121,8 @@ FROM
 
 Query result 2 screenshot
 
-### 4. LAG() and LEAD() Examples
-
-
-
-### Example 3a: Compare current salary with previous employee's salary
+### 4. 🔄 LAG() and LEAD() Examples
+#### Example 3a: Compare with previous salary
 
 ```sql 
 SELECT 
@@ -177,10 +167,9 @@ FROM
 
 Query relsult 3 screenshot
 
-#### 5. Aggregate Window Functions
+### 5. 🧮 Aggregate Window Functions
+#### Example 4a: Running total of salaries
 
-
-###  Example 4a: Calculate running total of salaries
 
 ```sql
 SELECT 
@@ -238,8 +227,7 @@ FROM
 
 query result 4 screenshot
 
-### 6. Salary Comparison with LAG and LEAD
-
+### 6. 📈 Salary Comparison with LAG and LEAD
 
 ```sql
 SELECT 
