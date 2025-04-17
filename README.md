@@ -6,7 +6,7 @@
  
 **Name:** UMWALI Belyse  27229
 **ID:** 27229
-**Name:** MUVUNYI Holiness  
+**Name:** MUVUNYI Holiness
 **ID:** 27137
 
 ## 📖 Introduction
